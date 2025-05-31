@@ -37,4 +37,19 @@ prevBtn.addEventListener("click", function () {
         console.log("Nothing to display.");
     }
 
-  });
+});
+
+nextBtn.addEventListener("click", function () {
+  
+    const entry = adhkar[currentIndex];
+
+    quoteBox.innerHTML = `
+    <p style="font-size: 24px;">${entry.arabic}</p>
+    <p><em>${entry.transliteration}</em></p>
+    <p>${entry.translation}</p>
+    <p><small><strong>${entry.source}</strong></small></p>
+    `;
+
+    currentIndex = (currentIndex + 1) % adhkar.length;
+
+});
