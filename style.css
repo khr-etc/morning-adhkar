@@ -1,8 +1,8 @@
 body {
     font-family: 'Georgia', serif;
     text-align: center;
-    background-color: #c0cfb2;
-    color: #2e4332;
+    background-color: #ccedfa;
+    color: #184759;
 }
 
 .container {
@@ -10,7 +10,7 @@ body {
     margin: 10% auto;
     padding: 20px;
     background: white;
-    border: 2px solid #44624a;
+    border: 2px solid #184759;
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -28,7 +28,7 @@ blockquote {
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #44624a;
+    background-color: #276077;
     color: white;
     border: none;
     cursor: pointer;
@@ -36,5 +36,5 @@ button {
 }
 
 button:hover {
-    background-color: #2e4332;
+    background-color: #184759;
 }
