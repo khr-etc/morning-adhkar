@@ -171,8 +171,11 @@ let entry = adhkar[currentIndex];
 
 prevBtn.addEventListener("click", function () {
 
-    if (currentIndex > 0) {
-        // const entry = adhkar[currentIndex];
+    if (currentIndex == 0) {
+        document.getElementById("prev").style.visibility = 'hidden';
+    } else if (currentIndex > 0) {
+        document.getElementById("prev").style.visibility = 'visible';
+
         currentIndex = (currentIndex - 1) % adhkar.length;
 
         entry = adhkar[currentIndex];
@@ -189,6 +192,7 @@ prevBtn.addEventListener("click", function () {
         // currentIndex = (currentIndex - 1) % adhkar.length;
 
     } else {
+        // document.getElementById("prev").style.visibility = 'hidden';
         console.log("Nothing to display.");
     }
 
@@ -198,9 +202,21 @@ prevBtn.addEventListener("click", function () {
 
 nextBtn.addEventListener("click", function () {
 
-    currentIndex = (currentIndex + 1) % adhkar.length;
+    document.getElementById("prev").style.visibility = 'visible';
 
-    entry = adhkar[currentIndex];
+    if (currentIndex == 0) {
+        entry = adhkar[0];
+
+        currentIndex = (currentIndex + 1) % adhkar.length;
+    } else if (currentIndex > 0) {
+        currentIndex = (currentIndex + 1) % adhkar.length;
+
+        entry = adhkar[currentIndex];
+    }
+
+    // currentIndex = (currentIndex + 1) % adhkar.length;
+
+    // entry = adhkar[currentIndex];
 
     quoteBox.innerHTML = `
     <p style="font-size: 24px;">${entry.arabic}</p>
@@ -213,4 +229,5 @@ nextBtn.addEventListener("click", function () {
     // currentIndex = (currentIndex + 1) % adhkar.length;
 
     console.log(currentIndex);
+    
 });
