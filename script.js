@@ -169,17 +169,12 @@ let nextBtn = document.getElementById("next");
 
 let entry = adhkar[currentIndex];
 
-prevBtn.addEventListener("click", function () {
-
+function prev() {
     if (currentIndex == 0) {
-        document.getElementById("prev").style.visibility = 'hidden';
-    } else if (currentIndex > 0) {
-        document.getElementById("prev").style.visibility = 'visible';
-
+        prevBtn.disabled = true;
+        nextBtn.disabled = false;
+    } else {
         currentIndex = (currentIndex - 1) % adhkar.length;
-
-        entry = adhkar[currentIndex];
-        console.log("potato");
 
         quoteBox.innerHTML = `
         <p style="font-size: 24px;">${entry.arabic}</p>
@@ -187,47 +182,85 @@ prevBtn.addEventListener("click", function () {
         <p>${entry.translation}</p>
         <p><small><strong>${entry.source}</strong></small></p>
         `;
+    }
+}
 
-        // currentIndex = currentIndex - 1;
-        // currentIndex = (currentIndex - 1) % adhkar.length;
-
+function next() {
+    if (currentIndex == adhkar.length) {
+        prevBtn.disabled = false;
+        nextBtn.disabled = true;
     } else {
-        // document.getElementById("prev").style.visibility = 'hidden';
-        console.log("Nothing to display.");
-    }
-
-    console.log(currentIndex);
-
-});
-
-nextBtn.addEventListener("click", function () {
-
-    document.getElementById("prev").style.visibility = 'visible';
-
-    if (currentIndex == 0) {
-        entry = adhkar[0];
-
-        currentIndex = (currentIndex + 1) % adhkar.length;
-    } else if (currentIndex > 0) {
+        console.log('chicken');
         currentIndex = (currentIndex + 1) % adhkar.length;
 
-        entry = adhkar[currentIndex];
+        quoteBox.innerHTML = `
+        <p style="font-size: 24px;">${entry.arabic}</p>
+        <p><em>${entry.transliteration}</em></p>
+        <p>${entry.translation}</p>
+        <p><small><strong>${entry.source}</strong></small></p>
+        `;
     }
+}
 
-    // currentIndex = (currentIndex + 1) % adhkar.length;
 
-    // entry = adhkar[currentIndex];
+// prevBtn.addEventListener("click", function () {
 
-    quoteBox.innerHTML = `
-    <p style="font-size: 24px;">${entry.arabic}</p>
-    <p><em>${entry.transliteration}</em></p>
-    <p>${entry.translation}</p>
-    <p><small><strong>${entry.source}</strong></small></p>
-    `;
+//     if (currentIndex == 0) {
+//         document.getElementById("prev").style.visibility = 'hidden';
+//     } else if (currentIndex > 0) {
+//         document.getElementById("prev").style.visibility = 'visible';
 
-    // currentIndex = currentIndex + 1;
-    // currentIndex = (currentIndex + 1) % adhkar.length;
+//         currentIndex = (currentIndex - 1) % adhkar.length;
 
-    console.log(currentIndex);
+//         entry = adhkar[currentIndex];
+
+//         quoteBox.innerHTML = `
+//         <p style="font-size: 24px;">${entry.arabic}</p>
+//         <p><em>${entry.transliteration}</em></p>
+//         <p>${entry.translation}</p>
+//         <p><small><strong>${entry.source}</strong></small></p>
+//         `;
+
+//         // currentIndex = currentIndex - 1;
+//         // currentIndex = (currentIndex - 1) % adhkar.length;
+
+//     } else {
+//         // document.getElementById("prev").style.visibility = 'hidden';
+//         console.log("Nothing to display.");
+//     }
+
+//     console.log(currentIndex);
+
+// });
+
+// nextBtn.addEventListener("click", function () {
+
+//     document.getElementById("prev").style.visibility = 'visible';
+
+//     if (currentIndex == 0) {
+//         entry = adhkar[0];
+
+//         currentIndex = (currentIndex + 1) % adhkar.length;
+//     } else if (currentIndex > 0) {
+//         currentIndex = (currentIndex + 1) % adhkar.length;
+
+//         entry = adhkar[currentIndex];
+//     }
+
+//     // currentIndex = (currentIndex + 1) % adhkar.length;
+
+//     // entry = adhkar[currentIndex];
+
+//     quoteBox.innerHTML = `
+//     <p style="font-size: 24px;">${entry.arabic}</p>
+//     <p><em>${entry.transliteration}</em></p>
+//     <p>${entry.translation}</p>
+//     <p><small><strong>${entry.source}</strong></small></p>
+//     `;
+
+//     // currentIndex = currentIndex + 1;
+//     // currentIndex = (currentIndex + 1) % adhkar.length;
+
+//     console.log(currentIndex);
     
-});
+// });
