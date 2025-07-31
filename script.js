@@ -59,7 +59,7 @@ const adhkar = [
     // 7
     {
         arabic: "اَصْبَحْنَا عَلٰی فِطْرَةِ الْاِسْلَامِ وَ عَلٰی كَلِمَةِ الْاِخْلَاصِ وَ عَلٰی دِیْنِ نَبِیِّنَا مُحَمَّدٍ صلی الله علیه وسلم وَ عَلٰی مِلَّةِ اَبِیْنَا اِبْرَاهِیْمَ حَنِیْفًا مُّسْلِمًا وَّ مَا كَانَ مِنَ الْمُشْرِكِیْنَ",
-        tansliteration: "Aṣbaḥnā ‘alā fiṭratil islām, wa ‘alā kalimatil ikhlāṣ, wa ‘alā dīni nabiyyinā muḥammadin (ṣallallāhu ‘alaihi wasallam), wa ‘alā millati abīnā ibrāhīma ḥanīfa(n)m muslima(n)w wamā kāna minal mushrikīna. (Once in the morning and evening)",
+        tansliteration: "Aṣbaḥnā 'alā fiṭratil islām, wa 'alā kalimatil ikhlāṣ, wa 'alā dīni nabiyyinā muḥammadin (ṣallallāhu 'alaihi wasallam), wa 'alā millati abīnā ibrāhīma ḥanīfa(n)m muslima(n)w wamā kāna minal mushrikīna. (Once in the morning and evening)",
         translation: "We enter a new morning upon the Fiṭrah (pure disposition) of Islām, upon the word of pure faith, upon the religion of our Prophet Muḥammad (s.a.w) and upon the creed of our forefather Ibrahīm (a.s) who was one inclining towards truth, a Muslim [submitting to Allah] and he was not of the polytheists. (Once in the morning and evening)",
         source: "‘Abdul Raḥmān bin Abzā (r.a) narrated from his father that the Messenger of Allah (s.a.w) would recite in the morning and evening: We enter a new morning upon the Fiṭrah (pure disposition) of Islām, upon the word of pure faith, upon the religion of our Prophet Muḥammad (s.a.w) and upon the creed of our forefather Ibrahīm (a.s) who was one inclining towards truth, a Muslim [submitting to Allah] and he was not of the polytheists. [Musnad Aḥmad, Vol: 24, Ḥadīth: 15360, 15363] Ṣaḥīḥ"
     },
@@ -161,7 +161,7 @@ const adhkar = [
     }
 ]
 
-let currentIndex = 0;
+let currentIndex = -1;
 
 const quoteBox = document.getElementById("text");
 let prevBtn = document.getElementById("prev");
@@ -169,98 +169,48 @@ let nextBtn = document.getElementById("next");
 
 let entry = adhkar[currentIndex];
 
-function prev() {
-    if (currentIndex == 0) {
-        prevBtn.disabled = true;
-        nextBtn.disabled = false;
-    } else {
+prevBtn.addEventListener("click", function () {
+
+    if (currentIndex > 0) {
+        // const entry = adhkar[currentIndex];
         currentIndex = (currentIndex - 1) % adhkar.length;
 
+        entry = adhkar[currentIndex];
+        console.log("potato");
+
         quoteBox.innerHTML = `
         <p style="font-size: 24px;">${entry.arabic}</p>
         <p><em>${entry.transliteration}</em></p>
         <p>${entry.translation}</p>
         <p><small><strong>${entry.source}</strong></small></p>
         `;
-    }
-}
 
-function next() {
-    if (currentIndex == adhkar.length) {
-        prevBtn.disabled = false;
-        nextBtn.disabled = true;
+        // currentIndex = currentIndex - 1;
+        // currentIndex = (currentIndex - 1) % adhkar.length;
+
     } else {
-        console.log('chicken');
-        currentIndex = (currentIndex + 1) % adhkar.length;
-
-        quoteBox.innerHTML = `
-        <p style="font-size: 24px;">${entry.arabic}</p>
-        <p><em>${entry.transliteration}</em></p>
-        <p>${entry.translation}</p>
-        <p><small><strong>${entry.source}</strong></small></p>
-        `;
+        console.log("Nothing to display.");
     }
-}
 
+    console.log(currentIndex);
 
-// prevBtn.addEventListener("click", function () {
+});
 
-//     if (currentIndex == 0) {
-//         document.getElementById("prev").style.visibility = 'hidden';
-//     } else if (currentIndex > 0) {
-//         document.getElementById("prev").style.visibility = 'visible';
+nextBtn.addEventListener("click", function () {
 
-//         currentIndex = (currentIndex - 1) % adhkar.length;
+    currentIndex = (currentIndex + 1) % adhkar.length;
 
-//         entry = adhkar[currentIndex];
+    entry = adhkar[currentIndex];
 
-//         quoteBox.innerHTML = `
-//         <p style="font-size: 24px;">${entry.arabic}</p>
-//         <p><em>${entry.transliteration}</em></p>
-//         <p>${entry.translation}</p>
-//         <p><small><strong>${entry.source}</strong></small></p>
-//         `;
+    quoteBox.innerHTML = `
+    <p style="font-size: 24px;">${entry.arabic}</p>
+    <p><em>${entry.transliteration}</em></p>
+    <p>${entry.translation}</p>
+    <p><small><strong>${entry.source}</strong></small></p>
+    `;
 
-//         // currentIndex = currentIndex - 1;
-//         // currentIndex = (currentIndex - 1) % adhkar.length;
+    // currentIndex = currentIndex + 1;
+    // currentIndex = (currentIndex + 1) % adhkar.length;
 
-//     } else {
-//         // document.getElementById("prev").style.visibility = 'hidden';
-//         console.log("Nothing to display.");
-//     }
-
-//     console.log(currentIndex);
-
-// });
-
-// nextBtn.addEventListener("click", function () {
-
-//     document.getElementById("prev").style.visibility = 'visible';
-
-//     if (currentIndex == 0) {
-//         entry = adhkar[0];
-
-//         currentIndex = (currentIndex + 1) % adhkar.length;
-//     } else if (currentIndex > 0) {
-//         currentIndex = (currentIndex + 1) % adhkar.length;
-
-//         entry = adhkar[currentIndex];
-//     }
-
-//     // currentIndex = (currentIndex + 1) % adhkar.length;
-
-//     // entry = adhkar[currentIndex];
-
-//     quoteBox.innerHTML = `
-//     <p style="font-size: 24px;">${entry.arabic}</p>
-//     <p><em>${entry.transliteration}</em></p>
-//     <p>${entry.translation}</p>
-//     <p><small><strong>${entry.source}</strong></small></p>
-//     `;
-
-//     // currentIndex = currentIndex + 1;
-//     // currentIndex = (currentIndex + 1) % adhkar.length;
-
-//     console.log(currentIndex);
-    
-// });
+    console.log(currentIndex);
+});
