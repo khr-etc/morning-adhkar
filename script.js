@@ -48,12 +48,19 @@ const adhkar = [
         source: "‘Abdullah Ibn Khubaib (r.a) narrated, ‘We went out one rainy and intensely dark night to look for the Messenger of Allah (s.a.w), to lead us in prayer, and when we found him, he (s.a.w) said: ‘Say’, but I did not say anything. He (s.a.w) again said: ‘Say’, but I did not say anything. He (s.a.w) then said: ‘Say’. So I asked: ‘What am I to say?’ He (s.a.w) said, ‘Say: Say: He is Allah, the One and Only. Allah, the Eternal Refuge. He neither begets nor is He born. Nor is there to Him any equivalent. And say Mu‘awwidhatain i.e. Say: I seek refuge in the Lord of the daybreak. From the evil of what He created. And from the evil of darkness when it settles. And from the evil of the blowers in knots. And from the evil of an envier when he envies. And Say: I seek refuge in the Lord of mankind, the Sovereign of mankind, the God of mankind, from the evil of the retreating whisperer, who whispers [evil] in the chests of mankind, amongst the Jinn and mankind. Recite them three times each in the morning and in the evening; they will serve you for every purpose.’ [Sunan Abū Dawūd: 5082] Ḥasan"
     },
 
+    {
+        arabic: "حَسْبِیَ اللهُ لَآ اِلَهَ اِلَّا هُوَ عَلَیْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِیْمِ",
+        transliteration: "Hasbiya Allahu la ilaha illa Huwa 'alayhi tawakkaltu wa Huwa Rabbu al-'Arsh al-'Azim",
+        translation: "Sufficient for me is Allah; there is no deity except Him. On Him I have relied, and He is the Lord of the Great Throne.",
+        source: "Abu Darda' (may Allah be pleased with him) reported: 'Whoever says this seven times in the morning and seven times in the evening, Allah will suffice him in his troubles.' [Sunan Abu Dawood: 5081]"
+    },
+
     // 6
     {
         arabic: "اَللّٰهُمَّ بِكَ اَصْبَحْنَا وَ بِكَ اَمْسَیْنَا وَ بِكَ نَحْیَا وَ بِكَ نَمُوْتُ وَ اِلَیْكَ الْمَصِیْرُ",
         transliteration: "Allāhumma bika aṣbaḥnā wa bika amsainā, wa bika naḥyā, wa bika namūtu wa ilaikal maṣīru. (Once in the morning)",
         translation: "O Allah! By Your leave we reach the morning and by Your leave we reach the evening and by Your leave we live and by Your leave we will die and to You is our return. (Once in the morning)",
-        source: "Abū Hurairah (r.a) narrated that the Prophet (s.a.w) used to teach his companions to say in the morning, O Allah! By Your leave we reach the morning and by Your leave we reach the evening and by Your leave we live and by Your leave we will die and to You is our return. and to say in the evening, O Allah! By Your leave we reach the evening and by Your leave we reach the morning and by Your leave we live and by Your leave we will die, and to You is our resurrection. [Jāmi‘ al-Tirmidhī: 3391]Ṣaḥīḥ"
+        source: "Abū Hurairah (r.a) narrated that the Prophet (s.a.w) used to teach his companions to say in the morning, O Allah! By Your leave we reach the morning and by Your leave we reach the evening and by Your leave we live and by Your leave we will die and to You is our return. and to say in the evening, O Allah! By Your leave we reach the evening and by Your leave we reach the morning and by Your leave we live and by Your leave we will die, and to You is our resurrection. [Jāmi‘ al-Tirmidhī: 3391] Ṣaḥīḥ"
     },
 
     // 7
